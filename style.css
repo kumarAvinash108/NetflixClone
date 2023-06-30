@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/* change in body*/
+body{
+    background: #000;
+    color: white;
+}
+/*header*/
+.header{
+    width: 100%;
+    height: 100vh;
+    /* In back-ground image there will be a dark-layer so we are doing the work given below */
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/header-image.png);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.logo{
+    width: 150px;
+    /* By this the cursor will popint on logo*/
+    cursor: pointer;
+    
+}
+nav button{
+    border: 0;
+    /*outline is drawn outside the border to make content stand-out , here outline is 0*/
+    outline: 0;
+    background: #db0000;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+}
+.language-btn{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1pt solid #fff;
+    padding: 6px 30px;
+    font-size: 18px;
+
+}
+
+.language-btn img{
+    width: 15px;
+    height: 5px;
+  
+    margin-left: 10px;
+}
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*moving content in center*/
+    transform: translate(-50%,-50%);
+    margin-top: 100px;
+   
+
+}
+.header-content h1{
+    font-size: 50px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 750px;
+   
+    margin-bottom: 20px;
+}
+.header-content h3{
+    font-weight: 400;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.header-content p{
+    font-weight: 400;
+    font-size: 20px;
+   
+    margin-top: 20px;
+}
+.email-signup{
+    background: #fff;
+    border: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+   /* the overflow : hidden helps to keep the content in side the box*/
+    overflow: hidden;
+
+}
+.email-signup input{
+    /*flex: 1 is sending the button in the corner*/
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+    
+}
+.email-signup button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 16px;
+   
+    padding: 15px 30px;
+}
+
+/*the code given below is for features*/
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+.features h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.h{
+    width: 100%;
+    height: 9px;
+    background-color:rgba(108,108,108,0.4);
+    border: 0 none;
+}
+
+/* ---------faq------- */
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.accordian{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 1000px;
+
+}
+.accordian li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordian li label{
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 50px;
+    position: absolute;
+    right: 20px;
+    /* to convert '+' to 'X' sign we are doing this */
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordian .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    font-size: 25px;
+    /* to make content hidden */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+/* when we will click on any faq box the content will appear  */
+.accordian input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+/* to convert '+' to 'X' sign we are doing this */
+.accordian input[type="radio"]:checked  + label::after{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+
+}
+.faq small{
+    font-size: 23px;
+}
+
+/* footer area*/
+.footer{
+padding: 50px 15% 10px;
+color: #777;
+
+
+}
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+}
+.footer .col{
+    flex-basis: 33.33%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.footer a{
+    color: #777;
+}
+.footer .col a{
+    display: block;
+    padding-bottom: 5px;
+    color: #777;
+    font-size: 16px;
+    font-family: 200;
+    margin-bottom: 10px;
+   
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.footer .language-btn{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 1pt solid #fff;
+}
+.copyright-txt{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* ------making responsive for small screen---- */
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 100px;
+
+    }
+    nav button{
+        padding: 5px 10px;
+
+    }
+    nav .language-btn{
+        padding: 4px 8px;
+
+    }
+    .header-content{
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    .email-signup button{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+    }
+    .features h2{
+        font-size: 30px;
+    }
+    .features p{
+        font-size: 15px;
+    }
+    .row:nth-child(2), .row:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+       
+.accordian .content{
+    font-size: 14px;
+
+}
+.accordian li label{
+    padding: 10px;
+    font-size: 20px;
+}
+/* decreasing the size of +*/
+label::after{
+    font-size: 22px;
+}
+    
+}
